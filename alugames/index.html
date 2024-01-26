@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AluGames</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/modalController.js" defer></script>
+    <script src="js/palindromo.js" defer></script>
+    <script src="js/sort.js" defer></script>
+    <script src="js/confirmation.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+
+<body class="body">
+    <main class="container main">
+        <img src="img/logo.svg" alt="Logo AluGames">
+        <section class="divisor">
+            <div class="divisor__line"></div>
+            <img src="img/fade_bar.svg" alt="Visual bar" class="divisor__bar">
+            <div class="divisor__line"></div>
+        </section>
+        <h1 class="page-title">Aluguel de <span class="page-title__emphasis">boardgames</span></h1>
+        <section class="dashboard">
+            <ul class="dashboard__items">
+                <li class="dashboard__items__item" id="game-1">
+                    <div class="dashboard__item__img">
+                        <img src="img/monopoly.png" alt="Capa jogo Monopoly">
+                    </div>
+                    <p  class="dashboard__item__name">Monopoly</p>
+                    <a onclick="showConfirmationModal(1)"  href="#" class="dashboard__item__button">Alugar</a>
+                </li>
+                <li class="dashboard__items__item" id="game-2">
+                    <div class="dashboard__item__img">
+                        <img src="img/ticket_to_ride.png" alt="Capa jogo Ticket to Ride">
+                    </div>
+                    <p class="dashboard__item__name">Ticket to Ride</p>
+                    <a onclick="showConfirmationModal(2)" href="#" class="dashboard__item__button">Alugar</a>
+                </li>
+                <li class="dashboard__items__item" id="game-3">
+                    <div class="dashboard__item__img">
+                        <img src="img/takenoko.png" alt="Capa jogo Takenoko">
+                    </div>
+                    <p class="dashboard__item__name">Takenoko</p>
+                    <a onclick="showConfirmationModal(3)" href="#" class="dashboard__item__button">Alugar</a>
+                </li>
+            </ul>
+        </section>
+        <div class="desafios">
+            <div>
+                <p id="rentedGamesCount" class="rentedGames">Número de jogos alugados: 0</p>
+                <img src="img/hachuras.svg" alt="Visual hachuras" class="hachuras">
+            </div>
+            <div>
+                <button id="openPalindromeModal" class="desafios__button">Verificar Palíndromo</button>
+                <button id="openSortModal" class="desafios__button">Ordenar Números</button>
+            </div>
+        </div>
+        <div id="palindromeModal" class="modal">
+            <div class="modalContent">
+                <span class="close">&times;</span>
+                <label class="label">Escreva uma palavra ou frase para descobrir se é um palíndromo!</label>
+                <input type="text" id="palindromeInput" class="input" placeholder="asa, reviver..." required>
+                <p id="palindromeErrorMessage" class="errorMessage"></p>
+                <div class="checkContainer">
+                    <div id="palindromeResult" class="result"></div>
+                    <button id="palindromeSubmitButton" class="desafios__button">Verificar</button>
+                </div>
+            </div>
+        </div>
+        <div id="sortModal" class="modal">
+            <div class="modalContent">
+                <span class="close">&times;</span>
+                <label class="label">Digite os números que serão ordenados!</label>
+                <input type="text" id="sortInput" class="input" placeholder="Separe os números com espaço" required>
+                <p id="sortErrorMessage" class="errorMessage"></p>
+                <div class="checkContainer">
+                    <div id="sortResult" class="result"></div>
+                    <button id="sortSubmitButton" class="desafios__button">Ordenar</button>
+                </div>
+            </div>
+        </div>
+        <div id="confirmationModal" class="modal confirmation" > 
+            <div class="modalContent">
+                <div>
+                    <span class="close">&times;</span>
+                    <p id="nameGame" class="label"></p>
+                </div>
+                <div class="checkContainer">
+                    <button id="cancelSubmitButton" class="desafios__button"></button>
+                    <button id="confirmSubmitButton" class="desafios__button"></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="confirmationContainer" class="confirmation"></div>
+</body>
+
+</html>

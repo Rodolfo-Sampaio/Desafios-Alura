@@ -1,0 +1,119 @@
+.desafios__button {
+   background-color: #4CAF50;
+   border: none;
+   color: white;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   cursor: pointer;
+   transition-duration: 0.4s;
+   border-radius: 10px;
+   max-width: 250px;
+   margin-right: 10px;
+}
+
+.desafios__button:hover {
+   background-color: #45a049;
+}
+
+.modal {
+   display: none; 
+   position: fixed; 
+   z-index: 1; 
+   padding: 20%; 
+   left: 0;
+   top: 0;
+   width: 100%; 
+   height: 100%;
+   overflow: hidden; 
+   background-color: rgba(0,0,0,0.4); 
+}
+
+.modalContent {
+   font-family: Arial, Helvetica, sans-serif;
+   background-color: #fefefe;
+   margin: auto;
+   padding: 20px;
+   border: 1px solid #888;
+   width: 60%;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+   animation-name: animatetop;
+   animation-duration: 0.4s;
+   border-radius: 10px;
+}
+
+@keyframes animatetop {
+   from {top: -300px; opacity: 0}
+   to {top: 0; opacity: 1}
+}
+
+.close {
+   color: #aaaaaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+   margin-top: -8px;
+}
+
+.close:hover,
+.close:focus {
+   color: #000000;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.input {
+   font-size: 16px;
+   width: 100%;
+   padding: 10px 20px;
+   margin: 16px 0;
+   box-sizing: border-box;
+   border: 2px solid #ccc;
+   border-radius: 4px;
+   outline: none;
+}
+
+.input::placeholder {
+   color: #9b9b9b;
+}
+
+.input:focus {
+   border: 2px solid #389650;
+}
+
+.label {
+   color: #4CAF50;
+   font-size: 1.1rem;
+}
+
+.result {
+   color: #555555;
+   font-size: 1.2rem;
+}
+
+.checkContainer {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.modalContent .errorMessage {
+   color: #ff0000;
+}
+
+.checkContainer .desafios__button {
+   margin: 0;
+}
+
+.confirmation .modalContent {
+   display: flex;
+   flex-direction: column;
+   max-width: 20rem;
+   gap: 20px;
+   text-align: center;
+}
+
+.confirmation .checkContainer {
+   justify-content: space-around;
+}

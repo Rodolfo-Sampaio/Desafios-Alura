@@ -1,0 +1,33 @@
+.confirmation {
+   position: absolute;
+   top: 5%;
+   right: 5%;
+   display: flex;
+   gap: 10px;
+   flex-direction: column;
+   width: 350px;
+}
+
+.confirmationMessage {
+   color: #fff;
+   padding: 20px; 
+   border-radius: 15px; 
+   text-align: center;
+   font-family: 'Chakra Petch', sans-serif;
+   font-size: 20px;
+   max-width: 300px;
+   opacity: 0; 
+   transform: translateX(100%) translateY(0);
+   transition: all 0.8s ease-in-out;
+}
+
+.confirmationMessage.display {
+   opacity: 1;
+   transform: translateX(5%) translateY(0);
+   transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+
+}
+
+
+
+
