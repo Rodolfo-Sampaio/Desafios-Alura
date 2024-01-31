@@ -28,7 +28,6 @@ registrationForm.addEventListener('submit', function (event) {
 	let nameInput = document.getElementById('userName');
 	let firstName = nameInput.value.split(' ')[0];
 
-	
 	userLoginSection.style.display = 'block';
 
 	userLoginSection.innerHTML = /*html*/ `

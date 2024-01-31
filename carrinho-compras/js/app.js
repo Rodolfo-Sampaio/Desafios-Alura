@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		carrinho.innerHTML += /*html*/ `
             <section class="carrinho__produtos__produto">
                 <span class="texto-azul">${quantidade}x</span> ${nome} <span class="texto-azul">R$${preco}</span>
+                <button class="remover-item" onclick="removerItem('${nome}')">✖</button>
             </section>
         `;
 
@@ -67,6 +68,17 @@ function adicionar() {
 	document.getElementById('quantidade').value = 0;
 }
 
+function removerItem(nome) {
+	// Remover o item do carrinho
+	carrinhoItens = carrinhoItens.filter((item) => item.nome !== nome);
+
+	// Atualizar a exibição do carrinho
+	atualizarCarrinho();
+
+	// Salvar o carrinho no LocalStorage
+	localStorage.setItem('carrinhoItens', JSON.stringify(carrinhoItens));
+}
+
 function atualizarCarrinho() {
 	let carrinho = document.getElementById('lista-produtos');
 	carrinho.innerHTML = '';
@@ -76,6 +88,7 @@ function atualizarCarrinho() {
 		carrinho.innerHTML += /*html*/ `
             <section class="carrinho__produtos__produto">
                 <span class="texto-azul">${item.quantidade}x</span> ${item.nome} <span class="texto-azul">R$${item.preco}</span>
+                <button class="remover-item" onclick="removerItem('${item.nome}')">✖</button>
             </section>
         `;
 	});
