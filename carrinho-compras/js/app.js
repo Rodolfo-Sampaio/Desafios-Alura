@@ -41,30 +41,49 @@ function adicionar() {
 	let nomeProduto = produto.split('-')[0];
 	let valorUnitario = parseFloat(produto.split('R$')[1].replace(',', '.'));
 
-	// calcular o preço: subtotal
-	let preco = quantidade * valorUnitario;
+	// Verificar se o produto já está no carrinho
+	let produtoExistente = carrinhoItens.find((item) => item.nome === nomeProduto);
+
+	if (produtoExistente) {
+		// Atualizar a quantidade do produto existente
+		produtoExistente.quantidade = parseInt(produtoExistente.quantidade) + parseInt(quantidade);
+		produtoExistente.preco = produtoExistente.quantidade * valorUnitario;
+	} else {
+		// Adicionar novo item ao carrinho
+		carrinhoItens.push({
+			nome: nomeProduto,
+			quantidade: quantidade,
+			preco: quantidade * valorUnitario,
+		});
+	}
+
+	// Atualizar a exibição do carrinho
+	atualizarCarrinho();
+
+	// Salvar o carrinho no LocalStorage
+	localStorage.setItem('carrinhoItens', JSON.stringify(carrinhoItens));
+
+	// Limpar os campos
+	document.getElementById('quantidade').value = 0;
+}
+
+function atualizarCarrinho() {
 	let carrinho = document.getElementById('lista-produtos');
+	carrinho.innerHTML = '';
 
-	// adicionar no carrinho
-	carrinho.innerHTML += /*html*/ `
-        <section class="carrinho__produtos__produto">
-            <span class="texto-azul">${quantidade}x</span> ${nomeProduto} <span class="texto-azul">R$${preco}</span>
-        </section>
-    `;
+	// Adicionar os itens do carrinho à exibição
+	carrinhoItens.forEach((item) => {
+		carrinho.innerHTML += /*html*/ `
+            <section class="carrinho__produtos__produto">
+                <span class="texto-azul">${item.quantidade}x</span> ${item.nome} <span class="texto-azul">R$${item.preco}</span>
+            </section>
+        `;
+	});
 
-	// atualizar o valor total
-	totalGeral += preco;
+	// Atualizar o valor total
+	totalGeral = carrinhoItens.reduce((total, item) => total + item.preco, 0);
 	let campoTotal = document.getElementById('valor-total');
 	campoTotal.textContent = `R$ ${totalGeral}`;
-	document.getElementById('quantidade').value = 0;
-
-	// salvar o item no LocalStorage
-	carrinhoItens.push({
-		nome: nomeProduto,
-		quantidade: quantidade,
-		preco: preco,
-	});
-	localStorage.setItem('carrinhoItens', JSON.stringify(carrinhoItens));
 }
 
 function limpar() {
