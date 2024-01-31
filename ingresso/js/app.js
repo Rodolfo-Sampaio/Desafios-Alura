@@ -6,7 +6,7 @@ function comprar() {
 }
 
 function processarCompra(qtd, qtdTipo) {
-	if (qtd <= 0) {
+	if (qtd <= 0 || isNaN(qtd) ) {
 		alert('Apenas números positivos são válidos');
 	} else {
 		let qtdDisponivel = parseInt(document.getElementById(`qtd-${qtdTipo}`).textContent);
