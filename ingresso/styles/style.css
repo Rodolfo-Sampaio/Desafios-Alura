@@ -21,7 +21,7 @@ main.container {
 	height: auto;
 	border: 2px solid #00f4bf;
 	margin: 0 auto;
-	padding: 4.5rem 6.38rem;
+	padding: 3rem 3rem;
 	background-image: url('../assets/PNG/Imagem\ com\ borda.png');
 	background-size: cover;
 	position: relative;
@@ -39,7 +39,7 @@ main.container .grafismo {
 main.container h1 {
 	font-family: 'Chakra Petch', sans-serif;
 	font-size: 5rem;
-	line-height: 110%;
+	padding-bottom: 2rem;	
 }
 
 main.container h1 span {
@@ -50,7 +50,7 @@ form {
 	display: flex;
 	align-items: flex-end;
 	gap: 2rem;
-	margin: 2.5rem 0;
+	margin: 2rem;
 }
 
 form .input-group {
@@ -104,7 +104,7 @@ form button {
 }
 
 .hachuras {
-	margin: 5.19rem 0;
+	margin: 4rem;
 }
 
 .container section {
