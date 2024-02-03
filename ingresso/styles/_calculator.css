@@ -55,6 +55,8 @@
 	transform: translate(-50%, -50%);
 	z-index: 10;
 	animation: moveDown 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+	flex-direction: column;
+	justify-content: space-evenly;
 
 	display: none;
 }
@@ -88,7 +90,7 @@
 .operation-icons {
 	display: flex;
 	justify-content: space-around;
-	padding: 3rem 3rem 1rem 3rem;
+	padding: 1rem 3rem 0 3rem;
 }
 
 .operation-icon {
@@ -104,17 +106,17 @@
 }
 
 .operation-icon:hover {
-    transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 .add {
 	background-color: #00a4db;
-	animation: slideUpContent .9s cubic-bezier(0.51, 0.13, 0.35, 0.98);
+	animation: slideUpContent 0.9s cubic-bezier(0.51, 0.13, 0.35, 0.98);
 }
 
 .subtract {
 	background-color: #d42000;
-	animation: slideUpContent .7s cubic-bezier(0.51, 0.13, 0.35, 0.98);
+	animation: slideUpContent 0.7s cubic-bezier(0.51, 0.13, 0.35, 0.98);
 }
 
 .multiply {
@@ -124,7 +126,58 @@
 
 .divide {
 	background-color: #00d400;
-	animation: slideUpContent .4s cubic-bezier(0.51, 0.13, 0.35, 0.98);
+	animation: slideUpContent 0.4s cubic-bezier(0.51, 0.13, 0.35, 0.98);
+}
+
+.chosen-operation {
+	background-color: #919191;
+	animation: slideUpContent 1.4s cubic-bezier(0.51, 0.13, 0.35, 0.98);
+	width: 55px;
+	height: 55px;
+	font-size: 2rem;
+}
+
+.chosen-operation:hover {
+	transform: scale(1);
+}
+
+.calculator-input-container {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 1rem 3rem 0 3rem;
+	align-items: center;
+}
+
+.calculator-input-container input {
+	border: none;
+	outline: none;
+	padding: 10px;
+	width: 7rem;
+	font-size: 3.5rem;
+	text-align: center;
+	color: #363636;
+	cursor: pointer;
+	background-color: #e0e0e0;
+	border-radius: 8px;
+	transition: background-color 0.3s ease;
+	animation: slideUpContent 1.2s cubic-bezier(0.51, 0.13, 0.35, 0.98) forwards;
+}
+
+.calculator-input-container input:nth-child(3) {
+	animation: slideUpContent 2.1s cubic-bezier(0.51, 0.13, 0.35, 0.98) forwards;
+}
+
+.calculator-input-container input:hover,
+.calculator-input-container input:focus {
+	box-shadow: inset 0 0 0 2px #cccfd1; 
+}
+
+.calculator-result {
+	text-align: center;
+	font-size: 1.6rem;
+	font-family: Inter;
+	font-weight: bold;
+	color: #363636;animation: slideUpContent 1.4s cubic-bezier(0.51, 0.13, 0.35, 0.98) forwards;
 }
 
 @keyframes slideUpLarge {
