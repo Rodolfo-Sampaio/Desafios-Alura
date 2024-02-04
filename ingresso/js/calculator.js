@@ -16,12 +16,41 @@ overlay.addEventListener('click', function (event) {
 	if (event.target === overlay) {
 		overlay.classList.remove('overlay-open');
 		calculator.classList.remove('calculator-container-open');
-		closeIcon.classList.remove('close-icon-open');
 	}
 });
 
 closeIcon.addEventListener('click', function () {
 	overlay.classList.remove('overlay-open');
 	calculator.classList.remove('calculator-container-open');
-	closeIcon.classList.remove('close-icon-open');
+});
+
+let chosenOperation = document.getElementById('chosenOperation');
+
+function updateChosenOperation(operation, iconClass) {
+	chosenOperation.classList.add(operation);
+	chosenOperation.innerHTML = /*html*/ `
+		 <div class="operation-icon ${operation}-active">
+			  <i class="fas ${iconClass}"></i>
+		 </div>
+	`;
+}
+
+let add = document.querySelector('.add');
+add.addEventListener('click', function (event) {
+	updateChosenOperation('add', 'fa-plus');
+});
+
+let subtract = document.querySelector('.subtract');
+subtract.addEventListener('click', function (event) {
+	updateChosenOperation('subtract', 'fa-minus');
+});
+
+let multiply = document.querySelector('.multiply');
+multiply.addEventListener('click', function (event) {
+	updateChosenOperation('multiply', 'fa-times');
+});
+
+let divide = document.querySelector('.divide');
+divide.addEventListener('click', function (event) {
+	updateChosenOperation('divide', 'fa-divide');
 });

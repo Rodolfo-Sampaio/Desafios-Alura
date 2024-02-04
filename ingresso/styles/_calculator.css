@@ -94,7 +94,7 @@
 }
 
 .operation-icon {
-	width: 40px;
+	min-width: 40px;
 	height: 40px;
 	border-radius: 10px;
 	padding: 10px;
@@ -103,6 +103,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	z-index: 20;
 }
 
 .operation-icon:hover {
@@ -131,7 +132,7 @@
 
 .chosen-operation {
 	background-color: #919191;
-	animation: slideUpContent 1.4s cubic-bezier(0.51, 0.13, 0.35, 0.98);
+	animation: slideUpContent 1.2s cubic-bezier(0.51, 0.13, 0.35, 0.98);
 	width: 55px;
 	height: 55px;
 	font-size: 2rem;
@@ -139,6 +140,7 @@
 
 .chosen-operation:hover {
 	transform: scale(1);
+	cursor: auto;
 }
 
 .calculator-input-container {
@@ -156,11 +158,18 @@
 	font-size: 3.5rem;
 	text-align: center;
 	color: #363636;
-	cursor: pointer;
 	background-color: #e0e0e0;
 	border-radius: 8px;
 	transition: background-color 0.3s ease;
-	animation: slideUpContent 1.2s cubic-bezier(0.51, 0.13, 0.35, 0.98) forwards;
+	animation: slideUpContent 2.5s cubic-bezier(0.51, 0.13, 0.35, 0.98) forwards;
+}
+
+.calculator-input-container input::-webkit-outer-spin-button,
+.calculator-input-container input::-webkit-inner-spin-button {
+	-webkit-appearance: auto;
+	margin: 0;
+	position: relative;
+	right: -5px;
 }
 
 .calculator-input-container input:nth-child(3) {
@@ -169,7 +178,7 @@
 
 .calculator-input-container input:hover,
 .calculator-input-container input:focus {
-	box-shadow: inset 0 0 0 2px #cccfd1; 
+	box-shadow: inset 0 0 0 2px #cccfd1;
 }
 
 .calculator-result {
@@ -177,7 +186,8 @@
 	font-size: 1.6rem;
 	font-family: Inter;
 	font-weight: bold;
-	color: #363636;animation: slideUpContent 1.4s cubic-bezier(0.51, 0.13, 0.35, 0.98) forwards;
+	color: #363636;
+	animation: slideUpContent 1.4s cubic-bezier(0.51, 0.13, 0.35, 0.98) forwards;
 }
 
 @keyframes slideUpLarge {
@@ -240,5 +250,117 @@
 	}
 	100% {
 		transform: translateY(50px);
+	}
+}
+
+.add-active {
+	animation: moveAdd 1s cubic-bezier(0.56, 0.18, 0.48, 0.92) forwards;
+	background-color: #00a4db;
+	cursor: auto;
+	position: relative;
+}
+
+.add-active:hover {
+	transform: scale(1);
+}
+
+@keyframes moveAdd {
+	0% {
+		top: -100px;
+		left: -130px;
+		min-width: 40px;
+		height: 40px;
+		font-size: 1rem;
+	}
+	100% {
+		top: 0;
+		left: 0;
+		min-width: 55px;
+		height: 55px;
+		font-size: 2rem;
+	}
+}
+
+.subtract-active {
+	animation: moveSubtract 1s cubic-bezier(0.56, 0.18, 0.48, 0.92) forwards;
+	background-color: #d42000;
+	cursor: auto;
+	position: relative;
+}
+
+.subtract-active:hover {
+	transform: scale(1);
+}
+
+@keyframes moveSubtract {
+	0% {
+		top: -100px;
+		left: -45px;
+		min-width: 40px;
+		height: 40px;
+		font-size: 1rem;
+	}
+	100% {
+		top: 0;
+		left: 0;
+		min-width: 55px;
+		height: 55px;
+		font-size: 2rem;
+	}
+}
+
+.multiply-active {
+	animation: moveMultiply 1s cubic-bezier(0.56, 0.18, 0.48, 0.92) forwards;
+	background-color: #d6b600;
+	cursor: auto;
+	position: relative;
+}
+
+.multiply-active:hover {
+	transform: scale(1);
+}
+
+@keyframes moveMultiply {
+	0% {
+		top: -100px;
+		left: 45px;
+		min-width: 40px;
+		height: 40px;
+		font-size: 1rem;
+	}
+	100% {
+		top: 0;
+		left: 0;
+		min-width: 55px;
+		height: 55px;
+		font-size: 2rem;
+	}
+}
+
+.divide-active {
+	animation: moveDivide 1s cubic-bezier(0.56, 0.18, 0.48, 0.92) forwards;
+	background-color: #00d400;
+	cursor: auto;
+	position: relative;
+}
+
+.divide-active:hover {
+	transform: scale(1);
+}
+
+@keyframes moveDivide {
+	0% {
+		top: -100px;
+		left: 130px;
+		min-width: 40px;
+		height: 40px;
+		font-size: 1rem;
+	}
+	100% {
+		top: 0;
+		left: 0;
+		min-width: 55px;
+		height: 55px;
+		font-size: 2rem;
 	}
 }
