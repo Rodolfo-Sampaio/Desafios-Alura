@@ -1,4 +1,6 @@
+@import url(_modal.css);
 @import url(_calculator.css);
+@import url(_evenOdd.css);
 
 body {
 	width: 1440px;
@@ -137,3 +139,45 @@ form button {
 	font-size: 2rem;
 	padding-left: 1.5rem;
 }
+
+.btnChallenges {
+	background: var(--Light-Blue, #1875e8);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 10px;
+	outline: none;
+	overflow: hidden;
+	position: absolute;
+	bottom: 3rem;
+
+	color: #fff;
+	font-size: 18px;
+	cursor: pointer;
+	font-family: Inter;
+}
+
+.btnChallenges:hover:before {
+	left: 110%;
+	transition: 0.3s;
+}
+
+.btnChallenges:before {
+	content: '';
+	background: rgb(186 192 233 / 53%);
+	height: 100%;
+	width: 65px;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	transform: skew(-45deg);
+	transition: 0s;
+}
+
+.btnChallenges.calculator {
+	left: 3rem;
+}
+
+.btnChallenges.evenOdd {
+	left: 13rem;
+}
+

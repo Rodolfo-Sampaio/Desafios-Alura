@@ -42,11 +42,12 @@
             </ul>
             <img src="./assets/Ingresso.svg" alt="">
         </section>
-        <button id="calculatorButton" class="btnCalculator">Calculadora</button>
+        <button id="calculatorButton" class="btnChallenges calculator">Calculadora</button>
+        <button id="evenOddButton" class="btnChallenges evenOdd">Par ou Impar</button>
     </main>
-    <div id="overlay" class="calculatorOverlay">
+    <div id="overlay" class="overlay">
     </div>
-    <div id="calculator" class="calculator-container">
+    <div id="calculator" class="modal calculator-container">
         <i class="fas fa-times close-icon"></i>
         <div class="operation-icons">
             <div class="operation-icon add" title="Soma">
@@ -69,10 +70,16 @@
             </div>
             <input id="inputB" type="number" step="1" value="0">
         </div>
-        <p id="result" class="calculator-result">Adicione valores e <br>escolha a operação!</p>
+        <p id="calculatorResult" class="calculator-result">Adicione valores e <br>escolha a operação!</p>
     </div>
-    <script src="js/app.js"></script>
-    <script src="js/calculator.js"></script>
+    <div id="evenOdd" class="modal evenOdd-container">
+        <i class="fas fa-times close-icon"></i>
+        <input id="evenOddInput" type="number" step="1" value="0">
+        <p id="evenOddResult" class="evenOdd-result">Adicione um numero para saber se é par ou impar</p>
+    </div>
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/calculator.js"></script>
+    <script type="module" src="js/evenOdd.js"></script>
 </body>
 
 </html>

@@ -1,20 +1,20 @@
 let calculatorButton = document.getElementById('calculatorButton');
 let calculator = document.getElementById('calculator');
 let overlay = document.getElementById('overlay');
-let closeIcon = document.querySelector('.close-icon');
+let closeIconCalculator = document.querySelector('.calculator-container .close-icon');
 let calculatorContainer = document.querySelector('.calculator-container');
 
 function toggleCalculatorDisplay() {
 	overlay.style.display = 'block';
 	calculatorContainer.style.display = 'flex';
 	overlay.classList.add('overlay-open');
-	calculator.classList.add('calculator-container-open');
-	closeIcon.classList.add('close-icon-open');
+	calculator.classList.add('modal-open');
+	closeIconCalculator.classList.add('close-icon-open');
 }
 
 function closeCalculatorDisplay() {
 	overlay.classList.remove('overlay-open');
-	calculator.classList.remove('calculator-container-open');
+	calculator.classList.remove('modal-open');
 }
 
 calculatorButton.addEventListener('click', toggleCalculatorDisplay);
@@ -25,13 +25,13 @@ overlay.addEventListener('click', function (event) {
 	}
 });
 
-closeIcon.addEventListener('click', closeCalculatorDisplay);
+closeIconCalculator.addEventListener('click', closeCalculatorDisplay);
 
 let chosenOperation = document.getElementById('chosenOperation');
 
 function calculateAndSetOperation(operation, iconClass) {
 	chosenOperation.classList.add(operation);
-	let result = document.getElementById('result');
+	let calculatorResult = document.getElementById('calculatorResult');
 	chosenOperation.innerHTML = /*html*/ `
     <div class="operation-icon ${operation}-active">
       <i class="fas ${iconClass}"></i>
@@ -84,9 +84,9 @@ function calculateAndSetOperation(operation, iconClass) {
 
 	try {
 		calculationResult = calculator(operation, a, b);
-		result.innerText = `A ${operationName} é ${calculationResult}`;
+		calculatorResult.innerText = `A ${operationName} é ${calculationResult}`;
 	} catch (error) {
-		result.innerText = error.message;
+		calculatorResult.innerText = error.message;
 	}
 }
 
@@ -101,3 +101,5 @@ setupOperationButton('add', 'fa-plus');
 setupOperationButton('subtract', 'fa-minus');
 setupOperationButton('multiply', 'fa-times');
 setupOperationButton('divide', 'fa-divide');
+
+export { overlay };
