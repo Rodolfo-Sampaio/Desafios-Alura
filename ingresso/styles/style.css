@@ -1,6 +1,7 @@
 @import url(_modal.css);
 @import url(_calculator.css);
 @import url(_evenOdd.css);
+@import url(_tempConverter.css);
 
 body {
 	width: 1440px;
@@ -148,7 +149,7 @@ form button {
 	outline: none;
 	overflow: hidden;
 	position: absolute;
-	bottom: 3rem;
+	bottom: 5rem;
 
 	color: #fff;
 	font-size: 18px;
@@ -181,3 +182,7 @@ form button {
 	left: 13rem;
 }
 
+.btnChallenges.tempConverter {
+	left: 3rem;
+	bottom: 1.5rem;
+}

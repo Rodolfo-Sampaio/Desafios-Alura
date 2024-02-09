@@ -44,6 +44,7 @@
         </section>
         <button id="calculatorButton" class="btnChallenges calculator">Calculadora</button>
         <button id="evenOddButton" class="btnChallenges evenOdd">Par ou Impar</button>
+        <button id="tempConverterButton" class="btnChallenges tempConverter">Conversor de Temperatura</button>
     </main>
     <div id="overlay" class="overlay">
     </div>
@@ -77,9 +78,21 @@
         <input id="evenOddInput" type="number" step="1" value="0">
         <p id="evenOddResult" class="evenOdd-result">Adicione um numero para saber se é par ou impar</p>
     </div>
+    <div id="tempConverter" class="modal tempConverter-container">
+        <i class="fas fa-times close-icon"></i>
+        <div>
+            <p>Celsius</p>
+            <input id="celsiusInput" type="number" step="1" value="0">
+        </div>
+        <div>
+            <p>Fahrenheit</p>
+            <input id="fahrenheitInput" type="number" step="1" value="0">
+        </div>
+    </div>
     <script type="module" src="js/app.js"></script>
     <script type="module" src="js/calculator.js"></script>
     <script type="module" src="js/evenOdd.js"></script>
+    <script type="module" src="js/tempConvert.js"></script>
 </body>
 
 </html>
