@@ -1,0 +1,91 @@
+* {
+   margin: 0;
+   border: 0;
+   box-sizing: border-box;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+body {
+   font-family: 'Arial', sans-serif;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background: linear-gradient(180deg, rgba(1, 8, 14, 1) 1%, rgba(4, 24, 50, 1) 39%, rgba(1, 8, 14, 1) 88%);
+   color: #fff;
+}
+
+h1 {
+   font-family: 'Chakra Petch', sans-serif;
+   padding-bottom: 1rem;
+}
+
+h3 {
+   font-family: Inter;
+   padding-bottom: 1rem;
+}
+
+.container {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   padding-bottom: 4rem;
+}
+
+.challenge-box {
+   background-color: rgb(132, 132, 145);
+   color: #fff;
+   border-radius: 10px;
+   padding: 20px;
+   text-align: center;
+   width: 230px;
+   height: 205px;
+   position: relative;
+   overflow: hidden;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.473);
+   font-family: Inter;
+   font-size: 1.1rem;
+   margin-top: 2rem;
+   transition: .3s;
+
+}
+
+.challenge-box img {
+   width: 100%;
+   object-fit: cover;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+}
+
+.challenge-box:hover {
+   background-color:  rgb(25, 70, 128);
+}
+
+.description-container {
+   max-width: 40%;
+   position: fixed;
+   bottom: 12rem;
+   left: 50%;
+   transform: translateX(-50%);
+   background-color: rgba(4, 24, 50, 1);
+   color: #fff;
+   padding: 10px;
+   border-radius: 15px;
+   opacity: 0;
+   transition: opacity 0.3s ease-in-out;
+   font-family: Inter;
+   font-size: 1.1rem;
+   text-align: center;
+}
+
+.description {
+   display: none;
+}
