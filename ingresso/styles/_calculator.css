@@ -1,0 +1,226 @@
+.calculator-container {
+	width: 30rem;
+	min-height: 20rem;
+	flex-direction: column;
+	justify-content: space-evenly;
+	display: none;
+}
+
+.operation-icons {
+	display: flex;
+	justify-content: space-around;
+	padding: 1rem 3rem 0 3rem;
+}
+
+.operation-icon {
+	min-width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	padding: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 20;
+}
+
+.operation-icon:hover {
+	transform: scale(1.2);
+}
+
+.add {
+	background-color: #00a4db;
+	animation: slideUpContent 0.9s cubic-bezier(0.51, 0.13, 0.35, 0.98);
+}
+
+.subtract {
+	background-color: #d42000;
+	animation: slideUpContent 0.7s cubic-bezier(0.51, 0.13, 0.35, 0.98);
+}
+
+.multiply {
+	background-color: #d6b600;
+	animation: slideUpContent 1.2s cubic-bezier(0.51, 0.13, 0.35, 0.98);
+}
+
+.divide {
+	background-color: #00d400;
+	animation: slideUpContent 0.4s cubic-bezier(0.51, 0.13, 0.35, 0.98);
+}
+
+.chosen-operation {
+	background-color: #919191;
+	animation: slideUpContent 1.2s cubic-bezier(0.51, 0.13, 0.35, 0.98);
+	width: 55px;
+	height: 55px;
+	font-size: 2rem;
+}
+
+.chosen-operation:hover {
+	transform: scale(1);
+	cursor: auto;
+}
+
+.calculator-input-container {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 1rem 3rem 0 3rem;
+	align-items: center;
+}
+
+.calculator-input-container input {
+	border: none;
+	outline: none;
+	padding: 10px;
+	width: 7rem;
+	font-size: 3.5rem;
+	text-align: center;
+	color: #363636;
+	background-color: #e0e0e0;
+	border-radius: 8px;
+	transition: background-color 0.3s ease;
+	animation: slideUpContent 2.5s cubic-bezier(0.51, 0.13, 0.35, 0.98) forwards;
+}
+
+.calculator-input-container input::-webkit-outer-spin-button,
+.calculator-input-container input::-webkit-inner-spin-button {
+	-webkit-appearance: auto;
+	margin: 0;
+	position: relative;
+	right: -5px;
+}
+
+.calculator-input-container input:nth-child(3) {
+	animation: slideUpContent 2.1s cubic-bezier(0.51, 0.13, 0.35, 0.98) forwards;
+}
+
+.calculator-input-container input:hover,
+.calculator-input-container input:focus {
+	box-shadow: inset 0 0 0 2px #cccfd1;
+}
+
+.calculator-result {
+	text-align: center;
+	font-size: 1.6rem;
+	font-family: Inter;
+	font-weight: bold;
+	color: #363636;
+	animation: slideUpContent 1.4s cubic-bezier(0.51, 0.13, 0.35, 0.98) forwards;
+	min-height: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.add-active {
+	animation: moveAdd 1s cubic-bezier(0.56, 0.18, 0.48, 0.92) forwards;
+	background-color: #00a4db;
+	cursor: auto;
+	position: relative;
+}
+
+.add-active:hover {
+	transform: scale(1);
+}
+
+@keyframes moveAdd {
+	0% {
+		top: -100px;
+		left: -130px;
+		min-width: 40px;
+		height: 40px;
+		font-size: 1rem;
+	}
+	100% {
+		top: 0;
+		left: 0;
+		min-width: 55px;
+		height: 55px;
+		font-size: 2rem;
+	}
+}
+
+.subtract-active {
+	animation: moveSubtract 1s cubic-bezier(0.56, 0.18, 0.48, 0.92) forwards;
+	background-color: #d42000;
+	cursor: auto;
+	position: relative;
+}
+
+.subtract-active:hover {
+	transform: scale(1);
+}
+
+@keyframes moveSubtract {
+	0% {
+		top: -100px;
+		left: -45px;
+		min-width: 40px;
+		height: 40px;
+		font-size: 1rem;
+	}
+	100% {
+		top: 0;
+		left: 0;
+		min-width: 55px;
+		height: 55px;
+		font-size: 2rem;
+	}
+}
+
+.multiply-active {
+	animation: moveMultiply 1s cubic-bezier(0.56, 0.18, 0.48, 0.92) forwards;
+	background-color: #d6b600;
+	cursor: auto;
+	position: relative;
+}
+
+.multiply-active:hover {
+	transform: scale(1);
+}
+
+@keyframes moveMultiply {
+	0% {
+		top: -100px;
+		left: 45px;
+		min-width: 40px;
+		height: 40px;
+		font-size: 1rem;
+	}
+	100% {
+		top: 0;
+		left: 0;
+		min-width: 55px;
+		height: 55px;
+		font-size: 2rem;
+	}
+}
+
+.divide-active {
+	animation: moveDivide 1s cubic-bezier(0.56, 0.18, 0.48, 0.92) forwards;
+	background-color: #00d400;
+	cursor: auto;
+	position: relative;
+}
+
+.divide-active:hover {
+	transform: scale(1);
+}
+
+@keyframes moveDivide {
+	0% {
+		top: -100px;
+		left: 130px;
+		min-width: 40px;
+		height: 40px;
+		font-size: 1rem;
+	}
+	100% {
+		top: 0;
+		left: 0;
+		min-width: 55px;
+		height: 55px;
+		font-size: 2rem;
+	}
+}

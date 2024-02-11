@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./styles/_reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>e-Ticket</title>
+</head>
+
+<body>
+    <div class="back-button-container">
+        <a href="/index.html" class="back-button">&#8592; Voltar</a>
+    </div>
+    <header>
+        <img class="logo" src="./assets/PNG/Logo e-tricket.png" alt="Logo">
+    </header>
+    <main class="container">
+        <div class="grafismo"></div>
+        <h1>Compre seu <span>ingresso</span></h1>
+        <form action="">
+            <label class="input-group"> Escolha o tipo <select name="tipo-ingresso" id="tipo-ingresso">
+                    <option value="inferior">Cadeira inferior</option>
+                    <option value="superior">Cadeira superior</option>
+                    <option value="pista">Pista</option>
+                </select>
+            </label>
+            <label class="input-group">Qtde. <input type="number" id="qtd" placeholder="00" min="1" max="10">
+            </label>
+            <button onclick="comprar()" type="button">Comprar</button>
+        </form>
+        <img class="hachuras" src="./assets/SVG/Hachuras.svg" alt="">
+        <section>
+            <h2>Quantidade disponível</h2>
+            <ul class="lista">
+                <li>Pista<span id="qtd-pista">100</span></li>
+                <li>Cadeira superior<span id="qtd-superior">200</span></li>
+                <li>Cadeira inferior<span id="qtd-inferior">400</span></li>
+            </ul>
+            <img src="./assets/Ingresso.svg" alt="">
+        </section>
+        <button id="calculatorButton" class="btnChallenges calculator">Calculadora</button>
+        <button id="evenOddButton" class="btnChallenges evenOdd">Par ou Impar</button>
+        <button id="tempConverterButton" class="btnChallenges tempConverter">Conversor de Temperatura</button>
+    </main>
+    <div id="overlay" class="overlay">
+    </div>
+    <div id="calculator" class="modal calculator-container">
+        <i class="fas fa-times close-icon"></i>
+        <div class="operation-icons">
+            <div class="operation-icon add" title="Soma">
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="operation-icon subtract" title="Subtração">
+                <i class="fas fa-minus"></i>
+            </div>
+            <div class="operation-icon multiply" title="Multiplicação">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="operation-icon divide" title="Divisão">
+                <i class="fas fa-divide"></i>
+            </div>
+        </div>
+        <div class="calculator-input-container">
+            <input id="inputA" type="number" step="1" value="0">
+            <div id="chosenOperation" class="operation-icon chosen-operation" title="Escolha uma operação">
+                <i class="fas fa-question-circle"></i>
+            </div>
+            <input id="inputB" type="number" step="1" value="0">
+        </div>
+        <p id="calculatorResult" class="calculator-result">Adicione valores e <br>escolha a operação!</p>
+    </div>
+    <div id="evenOdd" class="modal evenOdd-container">
+        <i class="fas fa-times close-icon"></i>
+        <input id="evenOddInput" type="number" step="1" value="0">
+        <p id="evenOddResult" class="evenOdd-result">Adicione um numero para saber se é par ou impar</p>
+    </div>
+    <div id="tempConverter" class="modal tempConverter-container">
+        <i class="fas fa-times close-icon"></i>
+        <div>
+            <p>Celsius</p>
+            <input id="celsiusInput" type="number" step="1" value="0">
+        </div>
+        <div>
+            <p>Fahrenheit</p>
+            <input id="fahrenheitInput" type="number" step="1" value="0">
+        </div>
+    </div>
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/calculator.js"></script>
+    <script type="module" src="js/evenOdd.js"></script>
+    <script type="module" src="js/tempConvert.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+.registrationModal {
+	height: 400px;
+	width: 650px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: 0.4s, box-shadow 0.3s 0.4s;
+}
+
+.registrationModal.hidden {
+	box-shadow: none;
+	transition: 0.4s, box-shadow 0s;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.registrationModal.hidden .registrationForm {
+	top: 100%;
+}
+
+.registrationModal.hidden .invitation {
+	top: -100%;
+}
+
+.registrationModal.hidden .invitation .closeModal {
+	height: 0;
+	width: 0;
+	top: 0;
+	right: 0;
+}
+
+.registrationForm,
+.invitation {
+	background: rgba(228, 243, 252, 0.979);
+	width: 50%;
+	height: 100%;
+	padding: 25px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.registrationForm input {
+	background-color: rgba(24, 117, 232, 0.5);
+	width: 100%;
+	padding: 8px;
+	margin: 15px 0;
+	border: none;
+	border-radius: 3px;
+	outline: none;
+	color: #fff;
+	font-size: 18px;
+	font-family: Inter;
+}
+
+.registrationForm input:focus {
+	background-color: rgba(49, 135, 240, 0.5);
+	outline: none;
+}
+
+.registrationForm input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 500px rgba(24, 117, 232, 0.5) inset;
+	-webkit-text-fill-color: #fff;
+}
+
+.registrationForm label {
+	font: 500 14px Inter;
+	color: #001fcf;
+}
+
+.registerSubmitButton {
+	background: var(--Light-Blue, #1875e8);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 21px;
+	outline: none;
+	overflow: hidden;
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	color: #fff;
+	font-size: 18px;
+	cursor: pointer;
+	transform: translateX(-50%);
+	font-family: Inter;
+}
+
+.registerSubmitButton:hover:before {
+	left: 110%;
+	transition: 0.3s;
+}
+
+.registerSubmitButton:before {
+	content: '';
+	background: rgb(186 192 233 / 53%);
+	height: 100%;
+	width: 65px;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	transform: skew(-45deg);
+	transition: 0s;
+}
+
+.invitation {
+	background: linear-gradient(-45deg, #1875e8, #9ba6e0);
+	left: 50%;
+}
+
+.invitationTitle {
+	font: 30px Inter;
+	text-transform: uppercase;
+}
+
+.declineInvitation {
+	background: #474747;
+	padding: 10px 15px;
+	border-radius: 3px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	font-size: 12px;
+	white-space: nowrap;
+	cursor: pointer;
+	transform: translateX(-50%);
+	color: white;
+}
+
+.declineInvitation:hover {
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+	transform: translateX(-50%);
+}
+
+.closeModal {
+	background: #474747;
+	height: 30px;
+	width: 30px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	cursor: pointer;
+	transition: 0.4s 0.3s;
+}
+
+.closeModal:before,
+.closeModal:after {
+	content: '';
+	background: #fff;
+	height: 80%;
+	width: 3px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.closeModal:after {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.registerButton {
+	background: var(--Light-Blue, #9dc9ff);
+	height: 45px;
+	width: 150px;
+	padding: 10px 20px;
+	position: absolute;
+	top: 5rem;
+	right: 5rem;
+	font-size: 20px;
+	text-align: center;
+	white-space: nowrap;
+	cursor: pointer;
+	font-family: Inter;
+	border-radius: 1rem;
+	color: white;
+}
+
+.registerButton.active {
+	background: var(--Light-Blue, #1875e8);
+}
+
+.registerButton:hover {
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.loginSection {
+	display: none;
+	position: fixed;
+	top: 3rem;
+	right: 10%;
+	background-color: #1875e8;
+	padding: 15px;
+	z-index: 1;
+	color: white;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+	animation: fadeInFromRight 1s ease-out;
+}
+
+@keyframes fadeInFromRight {
+	0% {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.logoutButton {
+	cursor: pointer;
+}

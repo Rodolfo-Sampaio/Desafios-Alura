@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Praticando com desafios</title>
+   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+   <script src="app.js" defer></script>
+</head>
+
+<body>
+   <h1>Desafios propostos no curso</h1>
+   <h3>Lógica de programação: praticando com desafios da</h3>
+   <img src="img/logo-alura.svg" alt="">
+   <div class="container">
+      <a href="alugames/index.html">
+         <div class="challenge-box" onmouseover="showDescription('aluGamesDescription')"
+            onmouseout="hideDescription('aluGamesDescription')">
+            <p>AluGames</p>
+            <img src="img/alugames.jpg" alt="" class="challenge-image">
+         </div>
+      </a>
+      <a href="amigo-secreto/index.html">
+         <div class="challenge-box" onmouseover="showDescription('amigoSecretoDescription')"
+            onmouseout="hideDescription('amigoSecretoDescription')">
+            <p>Amigo Secreto</p>
+            <img src="img/amigo-secreto.jpg" alt="Descrição da imagem" class="challenge-image">
+         </div>
+      </a>
+      <a href="carrinho-compras/index.html">
+         <div class="challenge-box" onmouseover="showDescription('carrinhoComprasDescription')"
+            onmouseout="hideDescription('carrinhoComprasDescription')">
+            <p>Carrinho de Compras</p>
+            <img src="img/carrinho-compras.jpg" alt="Descrição da imagem" class="challenge-image">
+         </div>
+      </a>
+      <a href="ingresso/index.html">
+         <div class="challenge-box" onmouseover="showDescription('ingressoDescription')"
+            onmouseout="hideDescription('ingressoDescription')">
+            <p>e-Ticket</p>
+            <img src="img/ingresso.jpg" alt="Descrição da imagem" class="challenge-image">
+         </div>
+      </a>
+      <a href="sorteador-numeros/index.html">
+         <div class="challenge-box" onmouseover="showDescription('sorteadorNumerosDescription')"
+            onmouseout="hideDescription('sorteadorNumerosDescription')">
+            <p>Sorteador de Números</p>
+            <img src="img/sorteador.jpg" alt="Descrição da imagem" class="challenge-image">
+         </div>
+      </a>
+   </div>
+   <div id="descriptionContainer" class="description-container">
+      <p id="descriptionText"></p>
+   </div>
+   <p id="aluGamesDescription" class="description">Aplicação que simula uma locadora de jogos.</p>
+   <p id="amigoSecretoDescription" class="description">Sorteio de amigos secretos! Adicione nomes como Jaque, Rodrigo,
+      Suellen e Vini, clique em 'Sortear' e veja quem presenteará quem.</p>
+   <p id="carrinhoComprasDescription" class="description">Desenvolvido utilizando conceitos aprendidos no curso como
+      escolher, adicionar e limpar.</p>
+   <p id="ingressoDescription" class="description">Projeto de compra de ingressos, escolha seu tipo de ingresso, indique
+      a quantidade, clique em comprar e veja as atualizações em tempo real.</p>
+   <p id="sorteadorNumerosDescription" class="description">Escolha quantos números quer sortear, defina o intervalo e
+      clique em 'Sortear'.</p>
+</body>
+
+</html>
