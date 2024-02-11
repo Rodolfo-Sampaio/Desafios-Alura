@@ -16,13 +16,7 @@ function adicionar() {
 	let listaDeAmigos = document.getElementById('lista-amigos');
 
 	amigos.push(amigo.value);
-
-	if (listaDeAmigos.textContent == '') {
-		listaDeAmigos.textContent = amigo.value;
-	} else {
-		listaDeAmigos.textContent += ', ' + amigo.value;
-	}
-
+	atualizarLista();
 	amigo.value = '';
 }
 
@@ -56,6 +50,18 @@ function embaralha(lista) {
 
 function reiniciar() {
 	amigos = [];
-	document.getElementById('lista-amigos').innerHTML = '';
+	atualizarLista();
 	document.getElementById('lista-sorteio').innerHTML = '';
+}
+
+function removerAmigo(event) {
+	if (event.target.tagName === 'SPAN') {
+		amigos = amigos.filter((a) => a !== event.target.textContent);
+		atualizarLista();
+	}
+}
+
+function atualizarLista() {
+	let listaDeAmigos = document.getElementById('lista-amigos');
+	listaDeAmigos.innerHTML = amigos.map((a) => `<span>${a}</span>`).join(', ');
 }
